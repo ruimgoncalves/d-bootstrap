@@ -1,0 +1,9 @@
+<index: arrays="option/options" element="navbar-dropdown">
+  <li class="dropdown {{if open}}open{{/if}}">
+    <a as="mainButton" href="#" on-click="toggle()" class="dropdown-toggle {{@class}}" data-toggle="dropdown" role="button" aria-expanded="false">{{@content}}<span class="caret"></span></a>
+    <ul as="menu" class="dropdown-menu" role="menu">
+      {{each @options}}
+        <li class="{{this.class}}">{{this.content}}</li>
+      {{/each}}
+    </ul>
+  </li>
