@@ -75,16 +75,15 @@ Paginator::init = ->
   # output componet path
   # input paths..., function with params
   # reactive funcion to run
-  @model.start "pagesData", "page", "total", "perPage", (page, total, perPage) ->
-    totalPages = Math.ceil total / (perPage ? 1)
-    return paginationArr page, totalPages
+  @model.start "pagesData", "page", "total", "perPage",
+    (page, total, perPage) ->
+      totalPages = Math.ceil total / (perPage ? 1)
+      return paginationArr page, totalPages
 
-  console.log "Component Inited"
   return
 
 Paginator::create = (model, dom) ->
   paginator = this
-  console.log "Component Created"
   model.setNull "selected", 1
   return
 
